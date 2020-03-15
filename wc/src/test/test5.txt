@@ -1,4 +1,4 @@
-package com.wc;
+package test;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -15,7 +15,7 @@ import java.util.Set;
 
 import javax.swing.JFileChooser;
 
-public class Util {
+public class test5 {
     private static JFileChooser chooser;
     private static Set<String> set=new HashSet<String>();//存放正确的参数集合
     
@@ -104,9 +104,7 @@ public class Util {
                     }
                     codeLineCount++;// 代码行
                 }
-                //如果文件为空
-                if(sb.length()==0) wordCount=0;
-                else wordCount = sb.toString().split("\\s+").length;//单词行
+                wordCount = sb.toString().split("\\s+").length;//单词行
                 br.close();
                 isr.close();
                 fis.close();
@@ -166,35 +164,35 @@ public class Util {
     public static void print(boolean isGraphic,String[] param,Map<String,Integer> map) {
         if (isGraphic == true) {
             System.out.print("line count：");
-            System.out.println(map.get("lineCount"));	
+            System.out.println(map.get("linecount"));	
             System.out.print("word count：");
-            System.out.println(map.get("wordCount"));	
+            System.out.println(map.get("wordcount"));	
             System.out.print("char count：");
-            System.out.println(map.get("charCount"));
+            System.out.println(map.get("charcount"));
             System.out.print("blank lines count：");
-            System.out.println(map.get("nullLineCount"));
+            System.out.println(map.get("nullLinecount"));
             System.out.print("code lines count：");
-            System.out.println(map.get("codeLineCount"));
+            System.out.println(map.get("codeLinecount"));
             System.out.print("note lines count：");
-            System.out.println(map.get("noteLineCount"));
+            System.out.println(map.get("noteLinecount"));
         } else {
             for (int i = 0; i < param.length; i++) {
                 if (param[i].equals("-l")) {
                     System.out.print("line count：");
-                    System.out.println(map.get("lineCount"));
+                    System.out.println(map.get("linecount"));
                 } else if (param[i].equals("-w")) {
                     System.out.print("word count：");
-                    System.out.println(map.get("wordCount"));
+                    System.out.println(map.get("wordcount"));
                 } else if (param[i].equals("-c")) {
                     System.out.print("char count：");
-                    System.out.println(map.get("charCount"));
+                    System.out.println(map.get("charcount"));
                 } else if (param[i].equals("-a")) {
                     System.out.print("blank lines count：");
-                    System.out.println(map.get("nullLineCount"));
+                    System.out.println(map.get("nullLinecount"));
                     System.out.print("code lines count：");
-                    System.out.println(map.get("codeLineCount"));
+                    System.out.println(map.get("codeLinecount"));
                     System.out.print("note lines count：");
-                    System.out.println(map.get("noteLineCount"));
+                    System.out.println(map.get("noteLinecount"));
                 }
             }
         }
